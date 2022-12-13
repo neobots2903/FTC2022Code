@@ -39,8 +39,8 @@ public class Robot9330 {
         motorDriveFrontRight.setDirection(DcMotorSimple.Direction.REVERSE);
         motorDriveBackLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         motorDriveBackRight.setDirection(DcMotorSimple.Direction.REVERSE);
-        // motorLiftLeft.setDirection(DcMotorSimple.Direction.REVERSE);
-        motorLiftRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        motorLiftLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+        // motorLiftRight.setDirection(DcMotorSimple.Direction.REVERSE);
         
         // Turn on brakes
         motorLiftLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
