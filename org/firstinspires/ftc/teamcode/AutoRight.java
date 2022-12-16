@@ -15,7 +15,7 @@ public class AutoRight extends LinearOpMode {
         waitForStart();
         
         if(opModeIsActive()) {
-            new Robot9330(hardwareMap, false).auto();
+            new Robot9330(this, false).auto();
             
             while(opModeIsActive()) {};
         }
