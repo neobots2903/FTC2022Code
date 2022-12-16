@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -17,18 +18,20 @@ public class Robot9330 {
     public Servo servoClaw;
     
     public BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
+    public OpMode opMode;
     public boolean flip;
     
-    public Robot9330(HardwareMap hardwareMap, boolean flip) {
+    public Robot9330(OpMode opMode, boolean flip) {
+        this.opMode = opMode;
         this.flip = flip;
-        imu = hardwareMap.get(BNO055IMU.class, "imu");
-        motorDriveFrontLeft = hardwareMap.get(DcMotor.class, "motorDriveFrontLeft");
-        motorDriveFrontRight = hardwareMap.get(DcMotor.class, "motorDriveFrontRight");
-        motorDriveBackLeft = hardwareMap.get(DcMotor.class, "motorDriveBackLeft");
-        motorDriveBackRight = hardwareMap.get(DcMotor.class, "motorDriveBackRight");
-        motorLiftLeft = hardwareMap.get(DcMotor.class, "motorLiftLeft");
-        motorLiftRight = hardwareMap.get(DcMotor.class, "motorLiftRight");
-        servoClaw = hardwareMap.get(Servo.class, "servoClaw");
+        imu = opMode.hardwareMap.get(BNO055IMU.class, "imu");
+        motorDriveFrontLeft = opMode.hardwareMap.get(DcMotor.class, "motorDriveFrontLeft");
+        motorDriveFrontRight = opMode.hardwareMap.get(DcMotor.class, "motorDriveFrontRight");
+        motorDriveBackLeft = opMode.hardwareMap.get(DcMotor.class, "motorDriveBackLeft");
+        motorDriveBackRight = opMode.hardwareMap.get(DcMotor.class, "motorDriveBackRight");
+        motorLiftLeft = opMode.hardwareMap.get(DcMotor.class, "motorLiftLeft");
+        motorLiftRight = opMode.hardwareMap.get(DcMotor.class, "motorLiftRight");
+        servoClaw = opMode.hardwareMap.get(Servo.class, "servoClaw");
         
         //Set up IMU
         parameters.angleUnit = BNO055IMU.AngleUnit.RADIANS;
