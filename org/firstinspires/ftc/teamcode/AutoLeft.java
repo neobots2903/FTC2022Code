@@ -15,7 +15,7 @@ public class AutoLeft extends LinearOpMode {
         waitForStart();
         
         if(opModeIsActive()) {
-            new Robot9330(hardwareMap, true).auto();
+            new Robot9330(this, true).auto();
             
             while(opModeIsActive()) {};
         }
