@@ -76,6 +76,12 @@ public class Robot9330 {
         return 1;
     }
     
+    public void telemacatrate() {
+        opMode.telemetry.addData("motorLiftLeft", motorLiftLeft.getCurrentPosition());
+        opMode.telemetry.addData("motorLiftRight", motorLiftRight.getCurrentPosition());
+        opMode.telemetry.update();
+    }
+    
     // Moves robot
     public void move(double x, double y, double rx) {
         if(flip) {
