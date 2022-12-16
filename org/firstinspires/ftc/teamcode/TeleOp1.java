@@ -24,6 +24,8 @@ public class TeleOp1 extends LinearOpMode {
         if(isStopRequested()) return;
 
         while(opModeIsActive()) {
+            robot.telemacatrate();
+            
             //change speedMultiplier
             if(gamepad1.right_bumper && speedMultiplier < maxSpeedMultiplier && !speedUpPressed) {
                 speedMultiplier++;
@@ -59,14 +61,6 @@ public class TeleOp1 extends LinearOpMode {
 
             robot.move(x * speedMultiplier / maxSpeedMultiplier, y * speedMultiplier / maxSpeedMultiplier, rx * speedMultiplier / maxSpeedMultiplier);
             robot.liftLift(gamepad2.right_trigger - gamepad2.left_trigger);
-            
-            telemetry.addData("x", x);
-            telemetry.addData("y", y);
-            telemetry.addData("rx", rx);
-            telemetry.addData("motorLiftLeft", robot.motorLiftLeft.getCurrentPosition());
-            telemetry.addData("motorLiftRight", robot.motorLiftRight.getCurrentPosition());
-            telemetry.addData("power", gamepad2.right_trigger - gamepad2.left_trigger);
-            telemetry.update();
         
             if(gamepad2.right_bumper) {
                 robot.closeClaw();
