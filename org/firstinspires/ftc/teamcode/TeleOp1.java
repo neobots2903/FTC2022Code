@@ -14,9 +14,9 @@ public class TeleOp1 extends LinearOpMode {
     
     @Override
     public void runOpMode() throws InterruptedException {
-        Robot9330 robot = new Robot9330(hardwareMap, false);
+        Robot9330 robot = new Robot9330(this, false);
         
-        int maxSpeedMultiplier = 5;
+        int maxSpeedMultiplier = 3;
         int speedMultiplier = (int) Math.ceil(maxSpeedMultiplier / 2.0);
 
         waitForStart();
